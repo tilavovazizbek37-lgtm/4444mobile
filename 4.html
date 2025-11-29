@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPhone - Telefon Do'koni</title>
+    <link rel="stylesheet" href="4.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    📱 <span>TechPhone</span>
+                </div>
+                <nav>
+                    <button class="tab-btn active" onclick="showTab('products')">Mahsulotlar</button>
+                    <button class="tab-btn" onclick="showTab('videos')">Video Sharhlar</button>
+                    <a href="#">Aksiyalar</a>
+                    <a href="#">Aloqa</a>
+                </nav>
+                <div>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        🛒
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="heroTitle">Eng Yangi Smartfonlar</h1>
+            <p id="heroSubtitle">Premium sifat va eng yaxshi narxlar</p>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="container">
+        <div class="search-section" id="searchSection">
+            <input type="text" id="searchInput" placeholder="Telefon qidirish..." oninput="searchProducts()">
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="container">
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="videos-grid hidden" id="videosGrid"></div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Savat</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cartContent"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content" onclick="event.stopPropagation()">
+            <div class="video-modal-header">
+                <h3 id="videoTitle"></h3>
+                <button class="close-cart" onclick="closeVideoModal()">✕</button>
+            </div>
+            <iframe class="video-frame" id="videoFrame" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TechPhone</h4>
+                    <p>Eng yangi smartfonlar va aksiyalar</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Aloqa</h4>
+                    <p>Tel: +998 90 123 45 67</p>
+                    <p>Email: info@techphone.uz</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Manzil</h4>
+                    <p>Toshkent shahar, Chilonzor tumani</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 TechPhone. Barcha huquqlar himoyalangan.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
